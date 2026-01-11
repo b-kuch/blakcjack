@@ -130,9 +130,9 @@ h1 {
 }
 
 .card.back {
-  background: #dc143c;
-  color: white;
-  border: 1px solid #b22222;
+  background: #b8860b;
+  color: #ffd700;
+  border: 1px solid #ffd700;
   display: flex;
   justify-content: center;
   align-items: center;
