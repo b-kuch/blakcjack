@@ -21,11 +21,11 @@ A fully functional blackjack game built with TypeScript and Vite for the browser
 
 ## Sound Effects
 
-Add the following audio files to `src/sounds/`:
+Add the following audio files to `public/sounds/`:
 - `draw.mp3`: Sound played when cards are drawn
 - `gather.mp3`: Sound played at the end of each round
 
-You can find free sound effects online or create your own.
+You can find free sound effects online or create your own. The files should be MP3 format.
 
 ## Development
 

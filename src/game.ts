@@ -9,8 +9,8 @@ export class BlackjackGame {
   private discard: Card[] = []
   private state: GameState = 'betting'
   private appElement: HTMLElement
-  private drawSound = new Audio('sounds/draw.mp3')
-  private gatherSound = new Audio('sounds/gather.mp3')
+  private drawSound = new Audio('/sounds/draw.mp3')
+  private gatherSound = new Audio('/sounds/gather.mp3')
 
   constructor(appElement: HTMLElement) {
     this.appElement = appElement
