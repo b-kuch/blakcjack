@@ -10,6 +10,7 @@ export class BlackjackGame {
   private state: GameState = 'betting'
   private appElement: HTMLElement
   private drawSound = new Audio('/sounds/draw.mp3')
+  private standSound = new Audio('/sounds/stand.mp3')
   private gatherSound = new Audio('/sounds/gather.mp3')
 
   constructor(appElement: HTMLElement) {
@@ -108,6 +109,7 @@ export class BlackjackGame {
   private playerStand(): void {
     if (this.state !== 'playing') return
 
+    this.standSound.play()
     this.player.isStanding = true
     this.state = 'dealer-turn'
     this.dealerTurn()

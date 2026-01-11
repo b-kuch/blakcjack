@@ -8,7 +8,7 @@ A fully functional blackjack game built with TypeScript and Vite for the browser
 - **Betting System**: Place bets with chip tracking and payout calculations
 - **Realistic Cards**: Authentic playing card design with proper suits, ranks, and inverted corners
 - **Smooth Animations**: Cards slide in from the deck, dealer draws with suspenseful delays
-- **Sound Effects**: Audio feedback for card draws and round endings
+- **Sound Effects**: Audio feedback for card draws, standing, and round endings
 - **Casino Styling**: Dark green felt table with gold accents
 - **Infinite Gameplay**: Automatic deck reshuffling when cards run out
 - **Responsive Layout**: Fixed-size game area with proper card positioning
@@ -23,6 +23,7 @@ A fully functional blackjack game built with TypeScript and Vite for the browser
 
 Add the following audio files to `public/sounds/`:
 - `draw.mp3`: Sound played when cards are drawn
+- `stand.mp3`: Sound played when player stands
 - `gather.mp3`: Sound played at the end of each round
 
 You can find free sound effects online or create your own. The files should be MP3 format.
