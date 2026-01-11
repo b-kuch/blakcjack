@@ -130,33 +130,13 @@ h1 {
 }
 
 .card.back {
-  background: repeating-linear-gradient(
-    45deg,
-    #b8860b,
-    #b8860b 8px,
-    #daa520 8px,
-    #daa520 16px
-  );
-  color: #ffd700;
-  border: 1px solid #ffd700;
+  background: #dc143c;
+  color: white;
+  border: 1px solid #b22222;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 24px;
-  position: relative;
-}
-
-.card.back::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  background: radial-gradient(circle, #daa520 0%, #b8860b 70%);
-  border-radius: 50%;
-  opacity: 0.8;
 }
 
 @keyframes cardDraw {
