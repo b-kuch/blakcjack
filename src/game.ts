@@ -9,6 +9,8 @@ export class BlackjackGame {
   private discard: Card[] = []
   private state: GameState = 'betting'
   private appElement: HTMLElement
+  private drawSound = new Audio('sounds/draw.mp3')
+  private gatherSound = new Audio('sounds/gather.mp3')
 
   constructor(appElement: HTMLElement) {
     this.appElement = appElement
@@ -42,6 +44,9 @@ export class BlackjackGame {
   }
 
   private startNewGame(): void {
+    // Play gather sound
+    this.gatherSound.play()
+
     // Gather used cards to discard
     this.discard.push(...this.player.hand.cards, ...this.dealer.hand.cards)
 
@@ -92,6 +97,7 @@ export class BlackjackGame {
   private playerHit(): void {
     if (this.state !== 'playing') return
 
+    this.drawSound.play()
     this.player.hand.addCard(this.getCard())
     if (this.player.hand.isBust()) {
       this.state = 'game-over'
@@ -110,6 +116,7 @@ export class BlackjackGame {
   private dealerTurn(): void {
     if (this.dealer.hand.getScore() < 17) {
       setTimeout(() => {
+        this.drawSound.play()
         this.dealer.hand.addCard(this.getCard())
         this.render()
         this.dealerTurn() // Recursive call

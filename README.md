@@ -1,6 +1,6 @@
 # Blackjack Game
 
-A fully functional blackjack game built with TypeScript and Vite for the browser. Features casino-style gameplay with betting, animations, and realistic card handling.
+A fully functional blackjack game built with TypeScript and Vite for the browser. Features casino-style gameplay with betting, animations, sound effects, and realistic card handling.
 
 ## Features
 
@@ -8,6 +8,7 @@ A fully functional blackjack game built with TypeScript and Vite for the browser
 - **Betting System**: Place bets with chip tracking and payout calculations
 - **Realistic Cards**: Authentic playing card design with proper suits, ranks, and inverted corners
 - **Smooth Animations**: Cards slide in from the deck, dealer draws with suspenseful delays
+- **Sound Effects**: Audio feedback for card draws and round endings
 - **Casino Styling**: Dark green felt table with gold accents
 - **Infinite Gameplay**: Automatic deck reshuffling when cards run out
 - **Responsive Layout**: Fixed-size game area with proper card positioning
@@ -17,6 +18,14 @@ A fully functional blackjack game built with TypeScript and Vite for the browser
 - **TypeScript**: Type-safe game logic
 - **Vite**: Fast development and build tool
 - **CSS**: Casino-themed styling with animations
+
+## Sound Effects
+
+Add the following audio files to `src/sounds/`:
+- `draw.mp3`: Sound played when cards are drawn
+- `gather.mp3`: Sound played at the end of each round
+
+You can find free sound effects online or create your own.
 
 ## Development
 
