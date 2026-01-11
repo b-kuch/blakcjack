@@ -169,11 +169,11 @@ export class BlackjackGame {
           <div class="dealer">
             <h2>Dealer</h2>
             <div class="dealer-area">
-              <div class="deck">
-                <div class="card back" style="position: absolute; z-index: 1; transform: translate(4px, 4px);">♠</div>
-                <div class="card back" style="position: absolute; z-index: 2; transform: translate(2px, 2px);">♠</div>
-                <div class="card back" style="position: absolute; z-index: 3;">♠</div>
-              </div>
+            <div class="deck">
+              <div class="card back" style="position: absolute; z-index: 1; transform: translate(4px, 4px);"></div>
+              <div class="card back" style="position: absolute; z-index: 2; transform: translate(2px, 2px);"></div>
+              <div class="card back" style="position: absolute; z-index: 3;"></div>
+            </div>
               <div class="hand">
                 ${this.renderHand(this.dealer.hand, this.state !== 'game-over' && this.state !== 'dealer-turn')}
               </div>
@@ -206,7 +206,7 @@ export class BlackjackGame {
   private renderHand(hand: BlackjackHand, hideSecondCard: boolean): string {
     return hand.cards.map((card, index) => {
       if (hideSecondCard && index === 1) {
-        return `<div class="card back">?</div>`
+        return `<div class="card back"></div>`
       }
       const colorClass = (card.suit === 'hearts' || card.suit === 'diamonds') ? 'red' : 'black'
       const isNew = index === hand.cards.length - 1
@@ -231,7 +231,7 @@ export class BlackjackGame {
     return Array.from({ length: stackSize }, (_, i) => {
       const zIndex = i + 1
       const offset = i * 2
-      return `<div class="card back" style="position: absolute; z-index: ${zIndex}; transform: translate(${offset}px, ${offset}px);">♠</div>`
+      return `<div class="card back" style="position: absolute; z-index: ${zIndex}; transform: translate(${offset}px, ${offset}px);"></div>`
     }).join('')
   }
 
