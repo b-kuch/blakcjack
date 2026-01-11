@@ -9,6 +9,7 @@ export class BlackjackGame {
   private discard: Card[] = []
   private state: GameState = 'betting'
   private appElement: HTMLElement
+  private isInitialDeal = true
   private drawSound = new Audio('/sounds/draw.mp3')
   private standSound = new Audio('/sounds/stand.mp3')
   private gatherSound = new Audio('/sounds/gather.mp3')
@@ -48,6 +49,8 @@ export class BlackjackGame {
     // Play gather sound
     this.gatherSound.play()
 
+    this.isInitialDeal = true
+
     // Gather used cards to discard
     this.discard.push(...this.player.hand.cards, ...this.dealer.hand.cards)
 
@@ -68,6 +71,7 @@ export class BlackjackGame {
 
     this.state = 'playing'
     this.render()
+    this.isInitialDeal = false
   }
 
   private placeBet(amount: number): void {
@@ -211,7 +215,7 @@ export class BlackjackGame {
         return `<div class="card back">?</div>`
       }
       const colorClass = (card.suit === 'hearts' || card.suit === 'diamonds') ? 'red' : 'black'
-      const isNew = index === hand.cards.length - 1
+      const isNew = !this.isInitialDeal && index === hand.cards.length - 1
       const animateClass = isNew ? 'new-card' : ''
       return `<div class="card ${colorClass} ${animateClass}">
         <div class="top">
